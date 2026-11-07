@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LUMA – Design portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap">
+<style>
+:root{--bg:#F7F4EE;--ink:#15140F;--panel:#ECE7DA;--card:#F7F4EE;--line:#15140F;--accent:#2B44E0;--accent-text:#2B44E0;--logo-filter:none;--logo-blend:multiply;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121110;--ink:#F2EFE8;--panel:#1B1A17;--card:#232220;--line:#F2EFE8;--accent-text:#9AA8FF;--logo-filter:invert(1);--logo-blend:screen;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121110;--ink:#F2EFE8;--panel:#1B1A17;--card:#232220;--line:#F2EFE8;--accent-text:#9AA8FF;--logo-filter:invert(1);--logo-blend:screen;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Heebo',Arial,sans-serif;line-height:1.5}
+.wrap{max-width:1280px;margin:0 auto}
+.pad{padding:72px clamp(20px,4.4vw,56px)}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:800}
+h2{font-size:clamp(30px,4vw,40px)}
+.nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding:24px clamp(20px,4.4vw,56px)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:26px;letter-spacing:2px}
+.brand img{width:52px;height:52px;mix-blend-mode:var(--logo-blend);filter:var(--logo-filter)}
+.links{display:flex;gap:28px;flex-wrap:wrap;align-items:center;font-size:16px}
+.links a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:14px 32px;border-radius:8px;font:700 18px 'Heebo',Arial,sans-serif;text-decoration:none;cursor:pointer}
+.btn-p{background:var(--accent);color:#fff;border:2px solid var(--accent)}
+.btn-o{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn-s{padding:8px 16px;font-size:16px}
+.hero{display:flex;flex-direction:column;gap:28px;max-width:880px;padding-bottom:80px}
+.role{font-weight:700;color:var(--accent-text)}
+.hero h1{font-size:clamp(36px,6vw,64px);line-height:1.1}
+.hero p{margin:0;font-size:clamp(18px,2vw,21px);max-width:640px}
+.row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.panel{background:var(--panel)}
+.work{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:32px}
+.cat{font:inherit;text-align:start;cursor:pointer;border:2px solid var(--line);border-radius:12px;padding:28px;min-height:160px;background:var(--card);color:var(--ink)}
+.cat[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.cat b{display:block;font-size:28px;font-weight:800;margin-bottom:8px}
+.cat span{font-size:17px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.tile{aspect-ratio:4/5;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.tile img,.tile video{width:100%;height:100%;object-fit:contain;-webkit-user-drag:none}
+.tile img{pointer-events:none}
+.about{max-width:880px;display:flex;flex-direction:column;gap:20px}
+.about p{margin:0;font-size:20px}
+.pk{background:#15140F;color:#F7F4EE}
+.pks{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;margin-top:40px}
+.pcard{border-radius:12px;padding:32px;background:var(--card);color:var(--ink)}
+.pcard.hi{background:#2B44E0;color:#fff}
+.pcard h3{font-size:24px}
+.price{font-size:36px;font-weight:800;margin:8px 0 16px;color:var(--accent-text)}
+.hi .price{color:#fff}
+.pcard ul{margin:0;padding-inline-start:22px;font-size:17px;display:flex;flex-direction:column;gap:8px}
+.fine{margin:32px 0 0;font-size:16px;color:#D8D4C8;max-width:800px}
+.contact{display:flex;flex-direction:column;gap:20px;align-items:flex-start;padding-top:80px;padding-bottom:80px}
+.contact h2{font-size:clamp(32px,4.4vw,44px)}
+.contact p{margin:0;font-size:20px;max-width:560px}
+.soc{display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-size:17px}
+.soc b{font-weight:700}
+.soc a{border:2px solid var(--line);border-radius:8px;padding:10px 24px;min-height:44px;display:inline-flex;align-items:center;font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="nav" data-protect>
+<div class="brand"><img src="assets/luma-logo.png" alt="" draggable="false"><span>LUMA</span></div>
+<div class="links"><a href="#work" data-t="navWork"></a><a href="#about" data-t="navAbout"></a><a href="#packages" data-t="navPackages"></a><a href="#contact" data-t="navContact"></a><button class="btn btn-o btn-s" id="lang" type="button"></button></div>
+</div>
+<section class="pad hero">
+<div class="role" data-t="role"></div>
+<h1 data-t="h1"></h1>
+<p data-t="sub"></p>
+<div class="row"><a class="btn btn-p" href="https://www.fiverr.com/s/EmrXez8" data-t="cta1"></a><a class="btn btn-o" href="#work" data-t="cta2"></a></div>
+</section>
+<section id="work" class="pad panel work" data-protect>
+<h2 data-t="workTitle"></h2>
+<p style="margin:12px 0 0;font-size:18px" data-t="workSub"></p>
+<div class="cats" id="cats"></div>
+<h3 id="galTitle" style="margin:48px 0 20px;font-size:28px"></h3>
+<div class="gal" id="gal"></div>
+</section>
+<section id="about" class="pad about"><h2 data-t="aboutTitle"></h2><p data-t="about"></p></section>
+<section id="packages" class="pad pk">
+<h2 data-t="packagesTitle"></h2>
+<div class="pks" id="pks"></div>
+<p class="fine" data-t="fine"></p>
+</section>
+<section id="contact" class="pad contact">
+<h2 data-t="contactTitle"></h2>
+<p data-t="contactSub"></p>
+<a class="btn btn-p" href="https://www.fiverr.com/s/EmrXez8" data-t="contactCta"></a>
+<div data-t="contactLine" style="font-size:17px"></div>
+<div class="soc"><b data-t="followLabel"></b><a href="#" id="ig"></a><a href="#" id="tt"></a></div>
+</section>
+</div>
+<script>
+var D="#15140F";
+var W={
+logo:[{k:"i",s:"assets/logo-wide.png",a:"NestTwist logo",bg:"#FFFFFF"},{k:"i",s:"assets/logo-square.png",a:"NestTwist logo, square version",bg:"#FFFFFF"}],
+ai:[{k:"v",s:"assets/ai-1.mp4",p:"assets/poster-1.jpg",bg:D},{k:"v",s:"assets/ai-2.mp4",p:"assets/poster-2.jpg",bg:D},{k:"v",s:"assets/ai-3.mp4",p:"assets/poster-3.jpg",bg:D}],
+mockup:[{k:"i",s:"assets/mock-jacket.png",a:"Black jacket mockup with rhinestone stars",bg:D},{k:"i",s:"assets/mock-eye.png",a:"T-shirt mockup with eye and star print",bg:D},{k:"i",s:"assets/mock-leopard.png",a:"T-shirt mockup with leopard print",bg:D},{k:"i",s:"assets/mock-pyramids.jpg",a:"T-shirt mockup with pyramids print",bg:D}]
+};
+var T={
+he:{dir:"rtl",lang:"he",toggle:"English",navWork:"עבודות",navAbout:"עליי",navPackages:"חבילות",navContact:"צור קשר",
+role:"עיצוב גרפי, עריכת וידאו ותוכן AI",h1:"לוגו, תוכן AI ומוקאפ שנותנים למותג שלך זהות עקבית",
+sub:"אני משלב עיצוב גרפי, עריכת וידאו ויצירת תוכן בעזרת AI, עם דגש על עיצוב נקי וזהות מותג עקבית.",
+cta1:"להזמנה ב-Fiverr",cta2:"לצפייה בעבודות",workTitle:"העבודות שלי",workSub:"בחר קטגוריה כדי לראות את כל הפרויקטים.",
+cats:{logo:["לוגו","לוגו, צבעים וטיפוגרפיה לזהות מותג עקבית.","פרויקטי לוגו"],ai:["תוכן AI","דמויות, תמונות ופוסטים בסגנון אחיד שנוצרים עם AI.","פרויקטי תוכן AI"],mockup:["מוקאפ","מוקאפים למוצרים ולקונספטים של מותגי הלבשה.","פרויקטי מוקאפ"]},
+aboutTitle:"עליי",about:"אני היוצר שמאחורי LUMA, ומשלב עיצוב גרפי, עריכת וידאו ויצירת תוכן בעזרת AI. אני יוצר לוגואים, תמונות ממוזערות ליוטיוב, ויזואלים לרשתות חברתיות וסרטונים, עם דגש על עיצוב נקי וזהות מותג עקבית. הפרויקטים האישיים שלי נעים מדמויות AI ועד קונספטים למותגי הלבשה. בין אם אתה צריך עיצוב בודד ובין אם פרויקט יצירתי גדול יותר, אעזור להביא את הרעיונות שלך לחיים. כל התקשורת מתנהלת בהודעות, כך שהתהליך פשוט וברור.",
+packagesTitle:"חבילות",
+pk:[{n:"בסיסי",p:"₪60",i:["תמונה ממוזערת ליוטיוב, פוסט או סטורי אחד","קונספט עיצוב אחד וסבב תיקונים אחד","קובץ סופי בפורמט PNG או JPG","אספקה תוך 3 ימים"]},{n:"סטנדרט",p:"₪165",hi:1,i:["שלושה עיצובים תואמים לרשתות חברתיות, או סרטון ערוך אחד באורך עד 30 שניות מחומרי הצילום שלך","עריכת הווידאו כוללת חיתוכים וכתוביות","שני סבבי תיקונים","אספקה תוך 5 ימים"]},{n:"לוגו ותוכן AI מתקדם",p:"הצעת מחיר מותאמת",i:["המחיר וזמן האספקה תלויים בהיקף, במורכבות, במספר התוצרים ובשימוש המיועד","הכול מוסכם מראש, לפני תחילת העבודה"]}],
+fine:"סבבי התיקונים כוללים התאמות של הקונספט שסוכם, ולא עיצוב מחדש מלא. קבצי מקור, נכסים בתשלום ויצירת סרטוני AI אינם כלולים בחבילות במחיר קבוע.",
+contactTitle:"מוכנים להתחיל?",contactSub:"שלחו לי הודעה ב-Fiverr וספרו לי על הרעיון שלכם.",contactCta:"להזמנה ב-Fiverr",contactLine:"כל התקשורת מתנהלת בהודעות ב-Fiverr.",followLabel:"עקבו אחריי",ig:"אינסטגרם",tt:"טיקטוק"},
+en:{dir:"ltr",lang:"en",toggle:"עברית",navWork:"Work",navAbout:"About",navPackages:"Packages",navContact:"Contact",
+role:"Graphic design, video editing and AI content",h1:"Logos, AI content and mockups that give your brand a consistent identity",
+sub:"I combine graphic design, video editing and AI-assisted content creation, with a focus on clean design and a consistent brand identity.",
+cta1:"Order on Fiverr",cta2:"See my work",workTitle:"My work",workSub:"Pick a category to see all the projects.",
+cats:{logo:["Logo","Logos, colors and typography for a consistent brand identity.","Logo projects"],ai:["AI content","AI characters, images and posts in one consistent style.","AI content projects"],mockup:["Mockup","Mockups for products and clothing brand concepts.","Mockup projects"]},
+aboutTitle:"About",about:"I’m the creator behind LUMA, combining graphic design, video editing, and AI-assisted content creation. I create logos, YouTube thumbnails, social media visuals, and videos, with a focus on clean design and a consistent brand identity. My personal projects range from AI characters to clothing brand concepts. Whether you need a single design or a larger creative project, I’ll help bring your ideas to life. All communication is handled through messages, keeping the process simple and clear.",
+packagesTitle:"Packages",
+pk:[{n:"Basic",p:"$20",i:["One YouTube thumbnail, social media post, or story","One design concept and one revision round","Final PNG or JPG file","Delivery within 3 days"]},{n:"Standard",p:"$55",hi:1,i:["Three matching social media designs, or one edited video up to 30 seconds using footage you provide","Video editing includes cuts and captions","Two revision rounds","Delivery within 5 days"]},{n:"Logos and advanced AI content",p:"Custom quote",i:["Pricing and delivery depend on the scope, complexity, number of deliverables, and intended use","Everything is agreed upon before work begins"]}],
+fine:"Revision rounds cover adjustments to the agreed concept, not a complete redesign. Source files, paid assets, and AI video generation are not included in the fixed-price packages.",
+contactTitle:"Ready to start?",contactSub:"Send me a message on Fiverr and tell me about your idea.",contactCta:"Order on Fiverr",contactLine:"All communication is handled through Fiverr messages.",followLabel:"Follow me",ig:"Instagram",tt:"TikTok"}
+};
+var lang=null,cat="logo";
+function detect(){var tz="",lg="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}try{lg=(navigator.language||"").toLowerCase()}catch(e){}
+return(tz==="Asia/Jerusalem"||tz==="Asia/Tel_Aviv"||lg.indexOf("he")===0||lg.indexOf("iw")===0)?"he":"en"}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function render(){
+var t=T[lang];document.documentElement.lang=t.lang;document.documentElement.dir=t.dir;
+document.querySelectorAll("[data-t]").forEach(function(n){n.textContent=t[n.getAttribute("data-t")]});
+document.getElementById("lang").textContent=t.toggle;
+document.getElementById("ig").textContent=t.ig;document.getElementById("tt").textContent=t.tt;
+var cs=document.getElementById("cats");cs.textContent="";
+["logo","ai","mockup"].forEach(function(k){var b=el("button","cat");b.type="button";b.setAttribute("aria-pressed",k===cat?"true":"false");
+b.appendChild(el("b",null,t.cats[k][0]));b.appendChild(el("span",null,t.cats[k][1]));
+b.onclick=function(){cat=k;render()};cs.appendChild(b)});
+document.getElementById("galTitle").textContent=t.cats[cat][2];
+var g=document.getElementById("gal");g.textContent="";
+W[cat].forEach(function(w){var d=el("div","tile");d.style.background=w.bg;var m;
+if(w.k==="v"){m=document.createElement("video");m.src=w.s;m.poster=w.p;m.controls=true;m.preload="metadata";m.setAttribute("playsinline","");m.setAttribute("controlsList","nodownload noremoteplayback");m.disablePictureInPicture=true}
+else{m=document.createElement("img");m.src=w.s;m.alt=w.a;m.draggable=false;m.loading="lazy"}
+d.appendChild(m);g.appendChild(d)});
+var p=document.getElementById("pks");p.textContent="";
+t.pk.forEach(function(x){var c=el("div","pcard"+(x.hi?" hi":""));c.appendChild(el("h3",null,x.n));c.appendChild(el("div","price",x.p));
+var u=el("ul");x.i.forEach(function(s){u.appendChild(el("li",null,s))});c.appendChild(u);p.appendChild(c)})
+}
+document.getElementById("lang").onclick=function(){lang=lang==="he"?"en":"he";render()};
+document.addEventListener("contextmenu",function(e){if(e.target.closest&&e.target.closest("[data-protect]"))e.preventDefault()});
+document.addEventListener("dragstart",function(e){if(e.target.closest&&e.target.closest("[data-protect]"))e.preventDefault()});
+lang=detect();render();
+</script>
+</body>
+</html>
